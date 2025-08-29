@@ -1,5 +1,7 @@
 # app_tareas_python_sql
 
+<img width="2555" height="1079" alt="image" src="https://github.com/user-attachments/assets/a35dbfe7-1622-4337-9906-614913a888aa" />
+
 # 🎯 Objetivo del proyecto: "Administrador de Tareas"
 
 Una pequeña app donde el usuario puede:
