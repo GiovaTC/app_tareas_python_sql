@@ -1,0 +1,31 @@
+<!-- frontend/index.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Administrador de Tareas</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <h1>Mis Tareas</h1>
+    <form action="/add" method="post">
+        <input type="text" name="title" placeholder="Nueva tarea" required>
+        <button type="submit">Agregar</button>
+    </form>
+
+    <ul>
+        {% for task in tasks %}
+            <li class="{{ 'completed' if task.completed else '' }}">
+                {{ task.title }}
+                {% if not task.completed %}
+                    <form action="/complete/{{ task.id }}" method="post">
+                        <button type="submit">Completar</button>
+                    </form>
+                {% endif %}
+                <form action="/delete/{{ task.id }}" method="post">
+                    <button type="submit">Eliminar</button>
+                </form>
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
